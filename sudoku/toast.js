@@ -1,0 +1,19 @@
+class Toast{
+    constructor(element){
+        this.activated=false
+        this.element=element
+        this.text=""
+    }
+    activate(text){
+        this.activated=true
+        if(text){
+            this.text=text
+        }
+        this.element.children[0].children[0].innerHTML=this.text
+        this.element.classList.remove("displayNone")
+    }
+    deactivate(){
+        this.activated=false
+        this.element.classList.add("displayNone")
+    }
+}

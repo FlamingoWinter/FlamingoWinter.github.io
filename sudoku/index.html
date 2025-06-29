@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Sudoku</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link rel="shortcut icon" href="PuzzlePiece.ico" type="image/x-icon">
+    <!-- link stylesheet to reset default css styles (this makes it consistent across browsers) -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- link styles -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- link fonts from google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Glory:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    
+</head>
+
+<body class="lightTheme">
+
+
+    </div>
+    <div id="boardHolder">
+        <div class="leftButtonsHolder">
+            <div id="timer">00:00</div>
+            <div class="defaultButton" id="new">New</span></div>
+            <div class="defaultButton" id="verify">Verify</span></div>
+            <div class="defaultButton" id="solve">Solve</span></div>
+            <div class="defaultButton" id="submit">Submit</span></div>
+            <div class="defaultButton" id="darktheme"><svg id="sunIcon" xmlns="http://www.w3.org/2000/svg" width="1em"
+                    height="1em" class="bi bi-brightness-high-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                </svg></div>
+        </div>
+        <div class="sudokuBoard sudokuSize">
+
+            <!--boxes go here-->
+        </div>
+        <div class="menu sudokuSize" id="newMenu">
+            <h1>Choose A Preset Below</h1>
+            <div class="horizontalHolder">
+                <div class="smallButton" id="veryEasy">Very Easy</div>
+                <div class="smallButton" id="easy">Easy</div>
+                <div class="smallButton" id="medium">Medium</div>
+                <div class="smallButton" id="hard">Hard</div>
+            </div>
+            <h1>Or Enter How Many Cells You Want Filled</h1>
+            <div class="horizontalHolder">
+                <input type="number" placeholder="Cells Filled" id="cellsInput">
+            </div>
+            <h1>Or Input Your Own Sudoku To Solve</h1>
+            <div class="horizontalHolder">
+                <div class="smallButton" id="input">Input</div>
+            </div>
+            <div class="goHolder">
+                <div class="smallButton" id="go">Go!</div>
+                <span class="smallButton" id="exit"><svg id="x" xmlns="http://www.w3.org/2000/svg" width="1.5em"
+                        height="1.5em" class="bi bi-x" viewBox="0 0 16 16">
+                        <path
+                            d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                    </svg></span>
+            </div>
+        </div>
+        <div class="rightButtonsHolder">
+            <div class="circleHolder">
+                <!-- circles go here -->
+            </div>
+            <div class="candidateNumbersButton"><span class="innerCircle"><svg id="pencilIcon"
+                        xmlns="http://www.w3.org/2000/svg" width="0.85em" height="0.85em" class="bi bi-pencil-fill"
+                        viewBox="0 0 16 16">
+                        <path
+                            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                    </svg></span></div>
+        </div>
+
+
+    </div>
+
+
+    </div>
+    <div id="toast" class="menu displayNone">
+        <div class="toastHolder">
+            <h1 id="toastParagraph">You need to enter a number between 28 and 80</h1>
+            <div class="horizontalHolder">
+                <div class="smallButton" id="ok">Ok!</div>
+            </div>
+        </div class="toastHolder">
+    </div>
+
+    <script src="sudokuBoard.js"></script>
+    <script src="square.js"></script>
+    <script src="timer.js"></script>
+    <script src="newMenu.js"></script>
+    <script src="circle.js"></script>
+    <script src="button.js"></script>
+    <script src="toast.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
